@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<style>
-		body {
-			background-image: url("https://wallpapercave.com/dwp1x/wp5508129.jpg");
-			background-repeat: no-repeat;
-            background-size: cover;
-			background-position: center center;
-		}
-	</style>
-</head>
-<body>
-	<!-- Your HTML content here -->
-</body>
+  <head>
+    <title>The Rex August</title>
+    <style>
+      body {
+        height: 5000px;
+        margin: 0; /* Remove default margin to prevent unwanted scrolling */
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        z-index: -1;
+      }
+
+      .background.visible {
+        opacity: 1;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background" id="background1" style="background-image: url('https://i.imgur.com/q0r2TUI.gif');"></div>
+    <div class="background" id="background2" style="background-image: url('https://cdn.discordapp.com/attachments/723943465230270605/1090320021831565434/Untitled_design.png');"></div>
+    <div class="background" id="background3" style="background-image: url('https://media.discordapp.net/attachments/941346977663295498/1063853156284506143/sa-mp-024.png?width=768&height=480');"></div>
+    <div class="background" id="background4" style="background-image: url('https://media.discordapp.net/attachments/741298992771629086/1090620007454609488/Grand_Theft_Auto_San_Andreas_Screenshot_2023.03.28_-_21.08.42.36.png?width=853&height=480');"></div>
+    <div class="background" id="background5" style="background-image: url('https://cdn.discordapp.com/attachments/1083342908880588822/1090988061233524796/wallpaperflare.com_wallpaper_1.jpg');"></div>
+    <div class="background" id="background6" style="background-image: url('https://wallpaper-house.com/data/out/12/wallpaper2you_571264.jpg');"></div>
+
+    <script>
+        const backgrounds = document.querySelectorAll('.background');
+        const sectionHeight = window.innerHeight;
+  
+        let currentSectionIndex = 0;
+  
+        window.addEventListener('scroll', () => {
+          const scrolledHeight = window.scrollY;
+          const sectionIndex = Math.floor(scrolledHeight / sectionHeight);
+  
+          if (sectionIndex !== currentSectionIndex) {
+            currentSectionIndex = sectionIndex;
+            backgrounds.forEach(background => {
+              background.classList.remove('visible');
+            });
+            document.querySelector(`#background${sectionIndex + 1}`).classList.add('visible');
+          }
+        });
+      </script>
+  </body>
 </html>
 
 
@@ -34,8 +76,8 @@
     td {
         padding: 10px;
         text-align: center;
-        background-color: #FFF;
-        color: #333;
+        background: linear-gradient(to bottom, rgba(32, 30, 30, 0.5) 50%, transparent 50%);
+        color: rgb(255, 255, 255);
         font-size: 18px;
         font-weight: bold;
         border: none;
@@ -43,7 +85,7 @@
     
     th {
         background-color: #F44336;
-        color: rgb(0, 0, 0);
+        color: rgb(240, 23, 23);
         text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
     }
     
@@ -176,7 +218,7 @@
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
+			background-color: #e92727;
 		}
 		
 		h1 {
@@ -198,7 +240,7 @@
 			border-radius: 10px;
 			padding: 16px;
 			margin: 16px;
-			background-color: #fff;
+			background-color: linear-gradient(to right, #FFC107 0%, rgba(255, 193, 7, 0) 50%);
 			width: 300px;
 			text-align: center;
 			font-family: Arial, sans-serif;
@@ -216,15 +258,15 @@
 			color: #fff;
 			margin-bottom: 20px;
 		
-		.hall {
-			background-color: rgba(255, 0, 0, 0.6);
+		.Malovelence {
+			background-color:  rgba(0, 0, 255, 0.6);
 		}
 		
-		.nightmare {
+		.Imperium {
 			background-color: rgba(0, 0, 255, 0.6);
 		}
 		
-		.seamless {
+		.Gate {
 			background-color: rgba(0, 255, 0, 0.6);
 		}
 	</style>
@@ -233,34 +275,34 @@
 	<h1>Vote Count</h1>
 	
 	<div class="container">
-		<div class="card hall">
+		<div class="card Malovelance">
 			<h2>Hall of Malovelance</h2>
-			<p id="hall-count">0</p>
+			<p id="Malovelance-count">0</p>
 		</div>
 		
-		<div class="card nightmare">
+		<div class="card Imperium">
 			<h2>Nightmare Imperium</h2>
-			<p id="nightmare-count">0</p>
+			<p id="Imperium-count">0</p>
 		</div>
 		
-		<div class="card seamless">
+		<div class="card Gate">
 			<h2>Seamless Gate</h2>
-			<p id="seamless-count">0</p>
+			<p id="Gate-count">0</p>
 		</div>
 	</div>
 	
 	<script>
 		// Update the vote count for Hall of Malovelance
-		let hallCount = 4; // Replace with actual vote count
-		document.getElementById("hall-count").innerHTML = hallCount;
+		let MalovelanceCount = 4; // Replace with actual vote count
+		document.getElementById("Malovelance-count").innerHTML = MalovelanceCount;
 		
 		// Update the vote count for Nightmare Imperium
-		let nightmareCount = 11; // Replace with actual vote count
-		document.getElementById("nightmare-count").innerHTML = nightmareCount;
+		let ImperiumCount = 11; // Replace with actual vote count
+		document.getElementById("Imperium-count").innerHTML = ImperiumCount;
 		
 		// Update the vote count for Seamless Gate
-		let seamlessCount = 3; // Replace with actual vote count
-		document.getElementById("seamless-count").innerHTML = seamlessCount;
+		let GateCount = 3; // Replace with actual vote count
+		document.getElementById("Gate-count").innerHTML = GateCount;
 	</script>
 </body>
 </html>
@@ -274,6 +316,7 @@
                 border-collapse: collapse;
                 width: 100%;
                 margin-bottom: 20px;
+                background-color: transparent;
             }
             th, td {
                 padding: 8px;
@@ -281,18 +324,18 @@
                 border-bottom: 1px solid #ddd;
             }
             th {
-                background-color: #f2f2f2;
+                background-color: transparent;
             }
             .hall {
-                background-color: #f44336;
+                background-color: transparent;
                 color: rgb(219, 103, 36);
             }
             .nightmare {
-                background-color: #893f96;
+                background-color: transparent;
                 color: rgb(69, 39, 138);
             }
             .seamless {
-                background-color: #5aeb66;
+                background-color: transparent;
                 color: rgb(72, 207, 45);
             }
         </style>
@@ -336,6 +379,83 @@
                 <tr>
                     <td>Aeron#0001</td>
                     <td>Shawd</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -435,6 +555,34 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
 
                 <!-- add as many rows as needed -->
             </tbody>
@@ -473,6 +621,91 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+
               
                 <!-- add as many rows as needed -->
                 </tbody>
@@ -539,21 +772,21 @@
                     <h1>Alliance Staff List</h1>
                     <ul>
                         <li>Satan</li>
-			<li>Chrissy</li>
-	                <li>JenniX</li>
-	               	<li>.David_.</li>
-	              	<li>[A]ntony.</li>
-	               	<li>neM]twiCh</li>
+	                <li>Chrissy</li>
+		        <li>JenniX</li>
+	              	<li>.David_.</li>
+			<li>[A]ntony.</li>
+                	<li>neM]twiCh</li>
 	                <li>[kD]Ryder</li>
 	               	<li>[neM]Brutus.</li>
 	               	<li>Heeder</li>
 	               	<li>Batii</li>
-	               	<li>bogota</li>
+	              	<li>bogota</li>
 		        <li>oC].DarkQueen.</li>
 		        <li>.Mary</li>
 		        <li>Morena.</li>
-	                <li>Anivia</li>
-  	                <li>shylingg</li>
+		        <li>Anivia</li>
+		        <li>shylingg</li>
 		        <li>Cherry.Blossom</li>
                         <li class="voted">Aeron</li>
 
@@ -576,7 +809,7 @@
 
                         <li>RodsMun</li>
 		        <li>Avryll</li>
-		        <li>[D]omA</li> 
+	                <li>[D]omA</li> 
                         <li class="voted">Klara</li>
                         <li class="voted">Aprel</li>
                         <li>Kiger_.</li>
@@ -671,8 +904,3 @@
                     </script>
                   </body>
                 </html>
-
- 
-
-
-		
